@@ -1,0 +1,8 @@
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash -p curl jq nix
+set -euo pipefail
+npmmeta=$(curl -s 'https://registry.npmjs.org/ts-abigen')
+version=$(echo "$npmmeta" | jq -r '."dist-tags" | .latest')
+
+tarball=$(echo "$npmmeta" | jq -r ".versions | .\"${version}\" | .dist | .tarball")
+curl -s "${tarball}" | tar -xz

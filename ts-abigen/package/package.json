@@ -1,0 +1,34 @@
+{
+  "name": "ts-abigen",
+  "version": "1.0.12",
+  "description": "Generate nodejs modules from ethereum smart contracts",
+  "main": "bin/ts-abigen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "ts-abigen": "bin/ts-abigen.js"
+  },
+  "author": "Enuma Technologies",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/argparse": "^1.0.34",
+    "@types/fs-extra": "^5.0.4",
+    "@types/node": "^10.9.4"
+  },
+  "dependencies": {
+    "@0xproject/abi-gen": "github:enumatech/0x-abi-gen",
+    "@0xproject/base-contract": "^2.0.2",
+    "@0xproject/typescript-typings": "^2.0.0",
+    "@0xproject/utils": "^1.0.8",
+    "@0xproject/web3-wrapper": "^2.0.2",
+    "@types/lodash": "^4.14.116",
+    "argparse": "^1.0.10",
+    "dts-generator": "^2.1.0",
+    "ethereum-types": "^1.0.6",
+    "ethers": "^3.0.27",
+    "fs-extra": "^7.0.0",
+    "lodash": "^4.17.10",
+    "typescript": "^3.0.3"
+  }
+}
