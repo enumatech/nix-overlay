@@ -19,13 +19,16 @@ export class RPCClient {
         const provider = this._provider = new Web3ProviderEngine()
         const w3 = this._w3 = new Web3Wrapper(provider, txDefaults)
 
-        const signerSub = this._signerSub = new OpaqueSignerSubprovider()
-        provider.addProvider(signerSub)
-
         if (rpcURL) {
             provider.addProvider(new RPCSubprovider(rpcURL))
+            const signerSub = this._signerSub = new OpaqueSignerSubprovider()
+            provider.addProvider(signerSub)
         }
         provider.start()
+    }
+
+    public addProvider(provider: any) {
+        this._provider.addProvider(provider)
     }
 
     /**
